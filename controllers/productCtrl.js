@@ -28,14 +28,30 @@ const productCtrl = {
 
     res.json({ msg: "create in product" });
   },
-  deleteProduct: (req, res) => {
+  deleteProduct: async (req, res) => {
+    await Products.findByIdAndDelete(req.params.id);
     res.json({ msg: "delete in product" });
   },
-  updateProduct: (req, res) => {
+  updateProduct: async (req, res) => {
+    const { title, images, description, content, colors, sizes, price } = req.body;
+    await Products.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        title,
+        content,
+        description,
+        colors,
+        sizes,
+        price,
+        images,
+      }
+    );
+
     res.json({ msg: "update in product" });
   },
-  getProduct: (req, res) => {
-    res.json({ msg: "get a product" });
+  getProduct: async (req, res) => {
+    const product = await Products.findById({ _id: req.params.id });
+    res.json(product);
   },
 };
 

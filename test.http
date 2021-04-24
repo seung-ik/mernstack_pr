@@ -20,8 +20,24 @@ Content-Type: application/json
   "price": 5000
 }
 ###
-DELETE  http://localhost:5000/api/products/id
+DELETE  http://localhost:5000/api/products/608386ac17de6d17b1f07188
 ###
-PUT http://localhost:5000/api/products/id
+PUT http://localhost:5000/api/products/608393e2c2ee1f18cb286f79
+Content-Type: application/json
+
+{
+  "title": "돈은 천천히 굴려야된다. update2",
+  "images": [
+    "https://www.upsieutoc.com/imgages/2020/07/18/img1.jpg",
+    "https://www.upsieutoc.com/imgages/2020/07/18/img2.jpg",
+    "https://www.upsieutoc.com/imgages/2020/07/18/img3.jpg",
+    "https://www.upsieutoc.com/imgages/2020/07/18/img4.jpg"
+  ],
+  "description":"practice merstack in javascript",
+  "content":"my name is seung-ddack",
+  "colors": ["red","black","olive"],
+  "sizes": ["XL","L","M"],
+  "price": 5000
+}
 ###
-GET  http://localhost:5000/api/products/id
+GET  http://localhost:5000/api/products/608393e2c2ee1f18cb286f79
