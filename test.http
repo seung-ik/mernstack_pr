@@ -2,6 +2,23 @@ GET http://localhost:5000/api/products
 
 ###
 POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+  "product_id":"2",
+  "title": "돈은 천천히 굴려야된다.",
+  "images": [
+    "https://www.upsieutoc.com/imgages/2020/07/18/img1.jpg",
+    "https://www.upsieutoc.com/imgages/2020/07/18/img2.jpg",
+    "https://www.upsieutoc.com/imgages/2020/07/18/img3.jpg",
+    "https://www.upsieutoc.com/imgages/2020/07/18/img4.jpg"
+  ],
+  "description":"practice merstack in javascript",
+  "content":"my name is seung-ddack",
+  "colors": ["red","black","olive"],
+  "sizes": ["XL","L","M"],
+  "price": 5000
+}
 ###
 DELETE  http://localhost:5000/api/products/id
 ###
